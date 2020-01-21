@@ -88,7 +88,7 @@ class GenresController extends Controller
     {
         $genre = Genre::find($id);
         $genre->delete();
-        return back();
 
+        return back();
     }
 }
