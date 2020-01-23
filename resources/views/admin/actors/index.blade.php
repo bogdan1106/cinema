@@ -2,7 +2,7 @@
 
 @section('content')
 
-    
+
 
 
     <div class="content-wrapper">
@@ -58,24 +58,24 @@
                                     </thead>
                                     <tbody>
                                     @foreach($actors as $actor)
-                                    <tr>
-                                        <td>{{$actor->id}}</td>
-                                        <td>{{$actor->name}}</td>
-                                        <td>{{$actor->birth_date}}</td>
+                                        <tr>
+                                            <td>{{$actor->id}}</td>
+                                            <td>{{$actor->name}}</td>
+                                            <td>{{$actor->birth_date}}</td>
 
-                                        <td><a href="{{route('actors.edit', $actor->id)}}"
-                                               class="fas fa-pencil-alt fa-2x"></a>
+                                            <td><a href="{{route('actors.edit', $actor->id)}}"
+                                                   class="fas fa-pencil-alt fa-2x"></a>
 
-                                        {{Form::open([
-                                        'route' => ['actors.destroy', $actor->id],
-                                        'method' => 'delete'
-                                        ])}}
-                                            <button type="submit" class="delete">
-                                                <i href="#" class="fas fa-trash-alt fa-2x"></i>
-                                            </button>
-                                        </td>
+                                                {{Form::open([
+                                                'route' => ['actors.destroy', $actor->id],
+                                                'method' => 'delete'
+                                                ])}}
+                                                <button type="submit" class="delete">
+                                                    <i href="#" class="fas fa-trash-alt fa-2x"></i>
+                                                </button>
+                                            </td>
                                             {{Form::close()}}
-                                    </tr>
+                                        </tr>
                                     @endforeach
 
                                     </tbody>
@@ -93,4 +93,4 @@
         <!-- /.content -->
     </div>
 
-    @endsection
+@endsection

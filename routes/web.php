@@ -25,27 +25,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function (){
     Route::resource('/pictures', 'PicturesController');
+    Route::resource('/categories', 'CategoriesController');
+    Route::resource('/genres', 'GenresController');
+    Route::resource('/actors', 'ActorsController');
+//    Route::resource('/users', 'UsersController');
+    Route::resource('/directors', 'DirectorsController');
+    Route::resource('/countries', 'CountriesController');
+
+
     Route::get('/test', function (){
         return view('admin.pictures.test');
     });
 });
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function (){
-    Route::resource('/categories', 'CategoriesController');
-});
-
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function (){
-    Route::resource('/genres', 'GenresController');
-});
-
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function (){
-    Route::resource('/actors', 'ActorsController');
-});
-
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function (){
-    Route::resource('/users', 'UsersController');
-});
-
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function (){
-    Route::resource('/directors', 'directorsController');
-});

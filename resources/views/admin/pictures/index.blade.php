@@ -82,14 +82,14 @@
                                             {{$picture->getActors()}}
                                         </td>
                                         <td>{{$picture->director->name}}</td>
-                                        <td>{{$picture->is_new}}</td>
+                                        <td>{{($picture->is_new ? 'New' : '')}}</td>
                                         <td>{{$picture->year}}</td>
                                         <td>{{$picture->budget}}</td>
                                         <td>{{$picture->views}}</td>
                                         <td>{{$picture->description}}</td>
                                         <td>{{$picture->release}}</td>
                                         <td>{{$picture->date}}</td>
-                                        <td><img src="{{$picture->getImage()}}" alt="" width="200"></td>
+                                        <td><img src="{{$picture->getImage()}}" alt="" width="200" ></td>
 
                                         <td><a href="{{route('pictures.edit', $picture->id)}}"
                                                class="fas fa-pencil-alt fa-2x"></a>
@@ -103,37 +103,9 @@
                                             </button>
                                         </td>
                                             {{Form::close()}}
-
-
-
-
                                     </tr>
                                     @endforeach
-                                    <tr>
-                                        <td>219</td>
-                                        <td>Alexander Pierce</td>
-                                        <td>11-7-2014</td>
-                                        <td><span class="tag tag-warning">Pending</span></td>
-                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>657</td>
-                                        <td>Bob Doe</td>
-                                        <td>11-7-2014</td>
-                                        <td><span class="tag tag-primary">Approved</span></td>
-                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>175</td>
-                                        <td>Mike Doe</td>
-                                        <td>11-7-2014</td>
-                                        <td><span class="tag tag-danger">Denied</span></td>
-                                        <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                                    </tr>
+
                                     </tbody>
                                 </table>
                             </div>

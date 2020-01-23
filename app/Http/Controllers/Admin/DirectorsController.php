@@ -83,6 +83,7 @@ class DirectorsController extends Controller
      */
     public function destroy(Director $director)
     {
-        //
+        $director->delete();
+        return back();
     }
 }

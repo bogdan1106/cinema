@@ -3,6 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="bcaf1893-af7c-4668-ac67-10278fd8cb9e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/DirectorsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DirectorsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PicturesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PicturesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Picture.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Picture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/main/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/actors/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/actors/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pictures/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pictures/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/pictures/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/pictures/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,14 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/pages/index.blade.php">
+      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/pictures/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
-              <caret line="2906" column="83" selection-start-line="2906" selection-start-column="80" selection-end-line="2906" selection-end-column="83" />
-              <folding>
-                <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#1;n#!!top" />
-              </folding>
+              <caret line="232" column="67" selection-start-line="232" selection-start-column="63" selection-end-line="232" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -54,20 +60,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>yea</find>
-      <find>checkb</find>
-      <find>err</find>
-      <find>f</find>
-      <find>description</find>
-      <find>Cre</find>
-      <find>getI</find>
-      <find>pictu</find>
-      <find>dele</find>
-      <find>bud</find>
-      <find>Upda</find>
-      <find>upda</find>
-      <find>edit</find>
-      <find>upd</find>
       <find>Add ac</find>
       <find>getActors</find>
       <find>gen</find>
@@ -76,7 +68,6 @@
       <find>Dire</find>
       <find>fonts</find>
       <find>font</find>
-      <find>img</find>
       <find>login</find>
       <find>1.jpg</find>
       <find>../images</find>
@@ -84,6 +75,21 @@
       <find>../fonts</find>
       <find>banne</find>
       <find>Arm</find>
+      <find>arm</find>
+      <find>p</find>
+      <find>cou</find>
+      <find>users</find>
+      <find>birh</find>
+      <find>back</find>
+      <find>val</find>
+      <find>$countries</find>
+      <find>actor</find>
+      <find>user</find>
+      <find>Controllers\Admin\UsersControlle</find>
+      <find>get</find>
+      <find>Up</find>
+      <find>img</find>
+      <find>date</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -93,6 +99,8 @@
       <replace>&quot;images/main/</replace>
       <replace>/images/main</replace>
       <replace>/fonts</replace>
+      <replace>countries</replace>
+      <replace>country</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -101,8 +109,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2020_01_09_225454_create_pictures_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2020_01_10_104347_create_categories_table.php" />
         <option value="$PROJECT_DIR$/app/Category.php" />
         <option value="$PROJECT_DIR$/../admin/pages/forms/advanced.html" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_11_213128_create_genres_table.php" />
@@ -120,31 +126,40 @@
         <option value="$PROJECT_DIR$/database/migrations/2020_01_20_145503_create_actor_picture_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_20_143014_create_actors_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_20_150512_update_actors_and_directors_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/layout.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/actors/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/actors/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Actor.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/actors/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ActorsController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/directors/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/directors/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/DirectorsController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/pictures/create.blade.php" />
-        <option value="$PROJECT_DIR$/app/Picture.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/PicturesController.php" />
         <option value="$PROJECT_DIR$/app/Director.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/pictures/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/genres/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/genres/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Genre.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/GenresController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/directors/edit.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/MainController.php" />
-        <option value="$PROJECT_DIR$/public/css/main/style.css" />
         <option value="$PROJECT_DIR$/public/css/main/zoomslider.css" />
         <option value="$PROJECT_DIR$/public/css/main/font-awesome.css" />
+        <option value="$PROJECT_DIR$/public/css/main/style.css" />
         <option value="$PROJECT_DIR$/resources/views/pages/index.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_01_22_154147__drop_coloumn_date_from_pictures_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_01_22_154311_create_country_coloum_at_pictures_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_01_22_155600_create_countries_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/CountryController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/actors/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/countries/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/countries/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/Country.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/countries/edit.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/CountriesController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/layout.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/DirectorsController.php" />
+        <option value="$PROJECT_DIR$/app/Picture.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/PicturesController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/pictures/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/pictures/create.blade.php" />
       </list>
     </option>
   </component>
@@ -260,8 +275,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="460" />
-    <option name="y" value="-22" />
+    <option name="x" value="40" />
+    <option name="y" value="51" />
     <option name="width" value="1250" />
     <option name="height" value="992" />
   </component>
@@ -289,37 +304,49 @@
             <path>
               <item name="cinema" type="b2602c69:ProjectViewProjectNode" />
               <item name="cinema" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cinema" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cinema" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cinema" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cinema" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="Admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cinema" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cinema" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cinema" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cinema" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cinema" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cinema" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cinema" type="b2602c69:ProjectViewProjectNode" />
               <item name="cinema" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cinema" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cinema" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cinema" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cinema" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cinema" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cinema" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cinema" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cinema" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="posters" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -328,7 +355,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="web&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/routes/web.php&#10;Pic&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Picture.php&#10;Genre&#9;null&#9;null&#10;GenresCo&#9;null&#9;null&#10;we&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/routes/web.php&#10;Dire&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Director.php&#10;Category&#9;null&#9;null&#10;cre&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/resources/views/admin/directors/create.blade.php&#10;Ac&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Http/Controllers/Admin/ActorsController.php&#10;Direc&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Http/Controllers/Admin/DirectorsController.php&#10;Catego&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Http/Controllers/Admin/CategoriesController.php&#10;Pictur&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Http/Controllers/Admin/PicturesController.php&#10;ind&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/resources/views/admin/pictures/index.blade.php&#10;in&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/resources/views/admin/actors/index.blade.php&#10;lay&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/resources/views/admin/layout.blade.php&#10;Actor&#9;null&#9;null&#10;Actors&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Http/Controllers/Admin/ActorsController.php&#10;Pict&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Http/Controllers/Admin/PicturesController.php&#10;crea&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/resources/views/admin/pictures/create.blade.php" />
+    <property name="SearchEverywhereHistoryKey" value="creat&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/resources/views/admin/pictures/create.blade.php&#10;Pict&#9;null&#9;null&#10;Pi&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Picture.php&#10;index&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/resources/views/admin/pictures/index.blade.php&#10;web&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/routes/web.php&#10;Dire&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Director.php&#10;lay&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/resources/views/admin/layout.blade.php&#10;Pic&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Picture.php&#10;Country&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Http/Controllers/Admin/CountryController.php&#10;Actor&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Http/Controllers/Admin/ActorsController.php&#10;Picture&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Picture.php&#10;Coun&#9;null&#9;null&#10;Genre&#9;null&#9;null&#10;GenresCo&#9;null&#9;null&#10;we&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/routes/web.php&#10;Category&#9;null&#9;null&#10;cre&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/resources/views/admin/directors/create.blade.php&#10;Ac&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Http/Controllers/Admin/ActorsController.php&#10;Direc&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Http/Controllers/Admin/DirectorsController.php&#10;Catego&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Http/Controllers/Admin/CategoriesController.php&#10;Pictur&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Http/Controllers/Admin/PicturesController.php&#10;ind&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/resources/views/admin/pictures/index.blade.php&#10;in&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/resources/views/admin/actors/index.blade.php&#10;Actors&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/app/Http/Controllers/Admin/ActorsController.php&#10;crea&#9;FILE&#9;file://C:/Users/Barbaros/Downloads/Open Server 5.3.0/OSPanel/domains/cinema/resources/views/admin/pictures/create.blade.php" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../gallery" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -337,16 +364,16 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Barbaros\Downloads\Open Server 5.3.0\OSPanel\domains\cinema\app\Http\Controllers\Admin" />
+      <recent name="C:\Users\Barbaros\Downloads\Open Server 5.3.0\OSPanel\domains\cinema\storage\app\public" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Barbaros\Downloads\Open Server 5.3.0\OSPanel\domains\cinema\resources\views\admin\countries" />
       <recent name="C:\Users\Barbaros\Downloads\Open Server 5.3.0\OSPanel\domains\cinema\resources\views\admin\genres" />
       <recent name="C:\Users\Barbaros\Downloads\Open Server 5.3.0\OSPanel\domains\cinema\resources\views\admin\directors" />
       <recent name="C:\Users\Barbaros\Downloads\Open Server 5.3.0\OSPanel\domains\cinema\resources\views\admin" />
       <recent name="C:\Users\Barbaros\Downloads\Open Server 5.3.0\OSPanel\domains\cinema\storage\app\public\avatars" />
-      <recent name="C:\Users\Barbaros\Downloads\Open Server 5.3.0\OSPanel\domains\cinema\storage\app\public\posters" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Barbaros\Downloads\Open Server 5.3.0\OSPanel\domains\cinema\app\Http\Controllers\Admin" />
-      <recent name="C:\Users\Barbaros\Downloads\Open Server 5.3.0\OSPanel\domains\cinema\storage\app\public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -437,12 +464,21 @@
       <workItem from="1579626833697" duration="1754000" />
       <workItem from="1579628693405" duration="982000" />
       <workItem from="1579702040437" duration="1688000" />
-      <workItem from="1579703815865" duration="1430000" />
+      <workItem from="1579703815865" duration="1757000" />
+      <workItem from="1579706222056" duration="1734000" />
+      <workItem from="1579708029469" duration="20000" />
+      <workItem from="1579708305885" duration="1774000" />
+      <workItem from="1579710554177" duration="1773000" />
+      <workItem from="1579712835403" duration="1776000" />
+      <workItem from="1579715159453" duration="1865000" />
+      <workItem from="1579779335364" duration="24000" />
+      <workItem from="1579779890415" duration="25000" />
+      <workItem from="1579779945797" duration="640000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97043000" />
+    <option name="totallyTimeSpent" value="107001000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -455,7 +491,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3293124" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -464,7 +499,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.3293124" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3292978" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2888165" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28284472" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.32953313" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -472,11 +507,11 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3292978" />
+      <window_info anchor="bottom" id="Message" order="0" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -512,58 +547,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/storage/app/public/posters/lTDORGbO3QIDRchC7dq88zAvZabvBqE0rPDi9MN9.jpeg" />
-    <entry file="file://$PROJECT_DIR$/storage/app/public/posters/mtJ3Cg7BNPhi7Tor55PPQMD0infVPFErGxRkyw8c.jpeg" />
-    <entry file="file://$PROJECT_DIR$/storage/app/public/posters/AGqWUa0tctJw0Zw2YihOIajvMWgBhyQG9iqS6OQT.jpeg" />
-    <entry file="file://$PROJECT_DIR$/storage/app/public/posters/9eYBujosraAcB7Ck8DkFA5CU3OtDBGJ4HYCJceym.jpeg" />
-    <entry file="file://$PROJECT_DIR$/storage/app/public/posters/iv4t23ULiVCeZs8XaauUB764nvfLic4CCfABinJT.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../admin/pages/forms/advanced.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38907">
-          <caret line="1179" column="30" selection-start-line="1179" selection-start-column="30" selection-end-line="1179" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/admin/adminlte.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="28504" column="15" selection-start-line="28504" selection-start-column="15" selection-end-line="28504" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/pictures/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4587">
-          <caret line="139" column="70" selection-start-line="139" selection-start-column="70" selection-end-line="139" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/admin/admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_09_225454_create_pictures_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="15" column="64" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_17_191644_create_table_genres_pictures.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_20_133859_add_colomn_director-id_kinopoisk-film-id_country_to-pictures_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -599,13 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="36" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/actors/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-165">
@@ -617,13 +593,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="68" column="70" selection-start-line="68" selection-start-column="64" selection-end-line="68" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CategoriesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -641,34 +610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/DirectorsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="46" column="51" selection-start-line="46" selection-start-column="51" selection-end-line="46" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/actors/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2310">
-          <caret line="70" column="57" selection-start-line="70" selection-start-column="53" selection-end-line="70" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ActorsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="74" column="51" lean-forward="true" selection-start-line="70" selection-start-column="7" selection-end-line="74" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/pictures/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Category.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
@@ -676,45 +617,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Director.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/pictures/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="214" column="55" selection-start-line="214" selection-start-column="55" selection-end-line="214" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PicturesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/genres/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
           <caret line="53" column="45" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/directors/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="47" column="23" selection-start-line="47" selection-start-column="23" selection-end-line="73" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Picture.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="31" column="5" selection-start-line="16" selection-start-column="3" selection-end-line="31" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -746,24 +652,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/MainController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/main/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="2614" selection-start-line="2614" selection-end-line="2614" />
         </state>
       </provider>
     </entry>
@@ -808,13 +700,165 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/main/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="791" column="38" lean-forward="true" selection-start-line="791" selection-start-column="38" selection-end-line="791" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_22_154311_create_country_coloum_at_pictures_table.php" />
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_22_154147__drop_coloumn_date_from_pictures_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pages/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="330" column="21" lean-forward="true" selection-start-line="330" selection-start-column="21" selection-end-line="330" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_22_155600_create_countries_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="18" column="35" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CategoriesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/actors/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="95" column="11" selection-start-line="95" selection-start-column="11" selection-end-line="95" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Country.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ActorsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="46" column="52" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="46" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CountriesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="86" column="43" selection-start-line="86" selection-start-column="43" selection-end-line="86" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/countries/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
-          <caret line="2906" column="83" selection-start-line="2906" selection-start-column="80" selection-end-line="2906" selection-end-column="83" />
-          <folding>
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#1;n#!!top" />
-          </folding>
+          <caret line="54" column="109" selection-start-line="54" selection-start-column="109" selection-end-line="54" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/countries/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="53" column="49" selection-start-line="53" selection-start-column="49" selection-end-line="53" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/storage/avatars/HaVmgpFJ6We1PnJGeCZR4l7fNPAAVE8fIrulwdDu.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/storage/avatars/2.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Director.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2020-01-22.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1252">
+          <caret line="1965" column="58" selection-start-line="1965" selection-start-column="58" selection-end-line="1965" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/public/posters/MaRAhipmVKHpUZ0pfEvBTiL8TpBc1L2YSoS0u2Ba.jpeg" />
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/pictures/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="84" column="70" selection-start-line="84" selection-start-column="70" selection-end-line="84" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/directors/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="341" column="35" selection-start-line="341" selection-start-column="35" selection-end-line="341" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Picture.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2441">
+          <caret line="144" column="48" selection-start-line="144" selection-start-column="48" selection-end-line="144" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/countries/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/DirectorsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PicturesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1287">
+          <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/pictures/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="232" column="67" selection-start-line="232" selection-start-column="63" selection-end-line="232" selection-end-column="67" />
         </state>
       </provider>
     </entry>

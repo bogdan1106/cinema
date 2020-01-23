@@ -11,8 +11,8 @@ use Intervention\Image\ImageManagerStatic as Image;
 class Picture extends Model
 {
 
-    protected $fillable = ['title_ru', 'title_eng', 'date',
-        'budget', 'year', 'description'];
+    protected $fillable = ['title_ru', 'title_eng',
+        'budget', 'year', 'description', 'kinopoisk_picture_id'];
 
     use Sluggable;
 
@@ -80,6 +80,11 @@ class Picture extends Model
        return $this->belongsTo(Category::class);
     }
 
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
+
 
     public function genres()
     {
@@ -137,7 +142,7 @@ class Picture extends Model
     {
         //resize poster and change quality
         $imagePath = Storage::disk('posters')->path($imageName);
-        $img = Image::make($imagePath)->fit(500)
+        $img = Image::make($imagePath)->resize(500)
             ->save($imagePath, 70);
     }
 

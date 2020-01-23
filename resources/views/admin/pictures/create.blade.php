@@ -70,7 +70,15 @@
 
                                 }}
                             </div>
-
+                            <div class="form-group">
+                                <label for="inputCountry">Country</label>
+                                {{Form::select(
+                                'country_id',
+                                $countries,
+                                null,
+                                ['class' => 'form-control select2bs4']
+                                )}}
+                            </div>
 
                             <div class="form-group">
                                 <label>Genres</label>
@@ -131,22 +139,14 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="inputName">Budget</label>
-                                <input type="text" name="budget" class="form-control">
+                                <label for="inputName">Kinopoisk id</label>
+                                <input type="text" name="kinopoisk_picture_id" class="form-control">
                             </div>
 
                             <div class="form-group">
-                                <label>Date add:</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                                    </div>
-                                    <input type="text" name="date" class="form-control" value="{{$date}}" >
-                                </div>
-                                <!-- /.input group -->
+                                <label for="inputName">Budget</label>
+                                <input type="text" name="budget" class="form-control">
                             </div>
-
-
                             <div class="form-group">
                                 <label for="inputDescription">Picture Description</label>
                                 <textarea name="description" class="form-control" rows="4"></textarea>
@@ -246,7 +246,36 @@
                     <!-- /.card-body -->
                     </div>
 
+                    <div class="card card-secondary">
+                        <div class="card-header success">
+                            <h3 class="card-title">Add country</h3>
 
+
+                        </div>
+                        {{Form::open([
+                       'route' => 'countries.store',
+                       'method' => 'post',
+                       ])}}
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="inputName">title</label>
+                                <input type="text" name="title" class="form-control">
+                            </div>
+
+
+
+                            <br>
+                            <br>
+                            <div class="row">
+                                <div class="col-12">
+                                    <a href="#" class="btn btn-secondary">Cancel</a>
+                                    <input type="submit" value="Create" class="btn btn-success float-right">
+                                </div>
+                            </div>
+                        </div>
+                    {{Form::close()}}
+                    <!-- /.card-body -->
+                    </div>
                 <!-- /.card-Categorybody -->
                     <!-- /.card -->
                 </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Actor;
 use App\Category;
+use App\Country;
 use App\Director;
 use App\Genre;
 use App\Http\Controllers\Controller;
@@ -25,11 +26,12 @@ class PicturesController extends Controller
     {
 
         $categories = Category::pluck('title', 'id')->all();
+        $countries = Country::pluck('title', 'id')->all();
         $genres = Genre::pluck('title', 'id')->all();
         $pictures = Picture::all();
 
         return view('admin.pictures.index', compact('categories',
-            'genres', 'pictures'));
+            'genres', 'pictures', 'countries'));
     }
 
     /**
@@ -39,14 +41,14 @@ class PicturesController extends Controller
      */
     public function create()
     {
+        $countries = Country::pluck('title', 'id')->all();
         $actors = Actor::pluck('name', 'id');
         $directors = Director::pluck('name', 'id');
-        $date = date("y-m-d");
         $categories = Category::pluck('title', 'id')->all();
         $genres = Genre::pluck('title', 'id')->all();
 
         return view('admin.pictures.create', compact('categories',
-            'genres', 'date', 'actors', 'directors'));
+            'genres', 'actors', 'directors', 'countries'));
     }
 
     /**
@@ -64,7 +66,6 @@ class PicturesController extends Controller
             'category_id' => 'required',
             'year' => 'required',
             'budget' => 'required',
-            'date' => 'required',
             'description' => 'required',
             'poster' => 'image',
         ]);
@@ -90,12 +91,11 @@ class PicturesController extends Controller
     public function edit($id)
     {
         $picture = Picture::find($id);
-        $date = date("y-m-d");
         $categories = Category::pluck('title', 'id')->all();
         $genres = Genre::pluck('title', 'id')->all();
 
         return view('admin.pictures.edit',
-            compact('picture','date', 'categories', 'genres'));
+            compact('picture', 'categories', 'genres'));
     }
 
     /**
@@ -114,7 +114,6 @@ class PicturesController extends Controller
             'category_id' => 'required',
             'year' => 'required',
             'budget' => 'required',
-            'date' => 'required',
             'description' => 'required',
             'poster' => 'image',
         ]);
