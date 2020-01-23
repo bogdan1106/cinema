@@ -54,6 +54,13 @@ class Picture extends Model
         $this->save();
     }
 
+    public function setCountry($id)
+    {
+        $this->country_id = $id;
+        $this->save();
+    }
+
+
 
     public function setDirector($id)
     {
@@ -142,8 +149,8 @@ class Picture extends Model
     {
         //resize poster and change quality
         $imagePath = Storage::disk('posters')->path($imageName);
-        $img = Image::make($imagePath)->resize(500)
-            ->save($imagePath, 70);
+        $img = Image::make($imagePath)->resize(250, 300)
+            ->save($imagePath, 90);
     }
 
 
@@ -176,7 +183,7 @@ class Picture extends Model
     }
 
 
-    function getRating()
+    function getRatingKinopoisk()
     {
         $rating = [];
         if (!empty($this->kinopoisk_picture_id)) {
@@ -189,7 +196,30 @@ class Picture extends Model
         }
         // выводим рейтинг КиноПоиск
         //echo $rating['kp'];
-        return $rating;
+        return substr($rating['kp'], 0, 3);
+    }
+
+
+        public function getRatingImdb()
+    {
+        $rating = [];
+        if (!empty($this->kinopoisk_picture_id)) {
+            $xml = simplexml_load_file('https://rating.kinopoisk.ru/' . $this->kinopoisk_picture_id . '.xml');
+            $names = ['kp_rating', 'imdb_rating'];
+            foreach ($names as $name) {
+                $new_name = str_replace('_rating', '', $name);
+                $rating[$new_name] = dom_import_simplexml($xml->$name)->nodeValue;
+            }
+        }
+        // выводим рейтинг КиноПоиск
+        //echo $rating['kp'];
+        return $rating['imdb'];
+
+    }
+    public static function getResentPictures()
+    {
+        return self::select('id', 'title_eng', 'poster', 'kinopoisk_picture_id', 'year', 'is_new')
+            ->orderBy('id', 'DESC')->take(8)->get();
     }
 
 }

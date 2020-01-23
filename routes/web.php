@@ -17,6 +17,7 @@
 
 
 Route::get('/', 'MainController@index');
+Route::get('/test', 'MainController@test');
 
 Auth::routes();
 

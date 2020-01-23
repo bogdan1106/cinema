@@ -25,6 +25,8 @@ class PicturesController extends Controller
     public function index()
     {
 
+
+
         $categories = Category::pluck('title', 'id')->all();
         $countries = Country::pluck('title', 'id')->all();
         $genres = Genre::pluck('title', 'id')->all();
@@ -73,6 +75,7 @@ class PicturesController extends Controller
         //save all attributes
         $picture = Picture::add($request->all());
         $picture->setCategory($request->get('category_id'));
+        $picture->setCountry($request->get('country_id'));
         $picture->setDirector($request->get('director_id'));
         $picture->setGenres($request->get('genres'));
         $picture->setActors($request->get('actors'));
@@ -91,11 +94,16 @@ class PicturesController extends Controller
     public function edit($id)
     {
         $picture = Picture::find($id);
+
+        $countries = Country::pluck('title', 'id')->all();
+        $actors = Actor::pluck('name', 'id');
+        $directors = Director::pluck('name', 'id');
         $categories = Category::pluck('title', 'id')->all();
         $genres = Genre::pluck('title', 'id')->all();
 
         return view('admin.pictures.edit',
-            compact('picture', 'categories', 'genres'));
+            compact('picture', 'categories', 'genres',
+                'actors', 'directors', 'countries'));
     }
 
     /**
@@ -122,6 +130,7 @@ class PicturesController extends Controller
 
         $picture->edit($request->all());
         $picture->setCategory($request->get('category_id'));
+        $picture->setCountry($request->get('country_id'));
         $picture->setGenres($request->get('genres'));
         $picture->setPictureNew($request->get('is_new'));
         $picture->uploadImage($request->image);

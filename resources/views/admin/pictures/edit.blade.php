@@ -9,12 +9,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Project Add</h1>
+                        <h1>Project Edit</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Project Add</li>
+                            <li class="breadcrumb-item active">Project Edit</li>
                         </ol>
                     </div>
                 </div>
@@ -87,6 +87,46 @@
                                 }}
 
                             </div>
+                            //this
+                            <div class="form-group">
+                                <label for="inputStatus">Director</label>
+                                {{
+                                Form::select('director_id',
+                                $directors,
+                                $picture->director_id,
+                                ['class' => 'form-control select2bs4'])
+
+                                }}
+                            </div>
+                            //this
+                            <div class="form-group">
+                                <label>Actors</label>
+                                {{
+                                Form::select('actors[]',
+                                $actors,
+                                $picture->actors()->pluck('actor_id'),
+                                ['class' => 'form-control select2bs4',
+
+                                'multiple' => 'multiple' ,
+                                'style' => 'width:100%',
+                                 ' data-placeholder'=> "Select an Actors",
+                                ])
+
+                                }}
+
+                            </div>
+
+                                <div class="form-group">
+                                    <label for="inputCountry">Country</label>
+                                    {{Form::select(
+                                    'country_id',
+                                    $countries,
+                                    $picture->country_id,
+                                    ['class' => 'form-control select2bs4']
+                                    )}}
+                                </div>
+
+
                             <div class="margin-20 form-group">
                                 <div class="marge icheck-primary d-inline">
                                     <input type="checkbox" name="is_new" id="checkboxPrimary1" {{$picture->is_new ? 'checked' : ''}}>
@@ -105,16 +145,7 @@
                                 <input type="text" name="budget" class="form-control" value="{{$picture->budget}}">
                             </div>
 
-                            <div class="form-group">
-                                <label>Date add:</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                                    </div>
-                                    <input type="text" name="date" class="form-control" value="{{$picture->date}}" >
-                                </div>
-                                <!-- /.input group -->
-                            </div>
+
 
 
                             <div class="form-group">
