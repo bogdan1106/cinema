@@ -27,11 +27,10 @@
                 <div class="col-md-6">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Genre {{$genre->name}} edit</h3>
+                            <h3 class="card-title">Director {{$director->name}} edit</h3>
 
                             <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                                    <i class="fas fa-minus"></i></button>
+
                             </div>
 
 
@@ -46,13 +45,17 @@
                             </div>
                         @endif
                         {{Form::open([
-                        'route' => ['genres.update', $genre->id],
+                        'route' => ['directors.update', $director->id],
                         'method' => 'put',
                         ])}}
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="inputName">Name</label>
-                                <input type="text" name="title" class="form-control" value="{{$genre->title}}">
+                                <input type="text" name="name" class="form-control" value="{{$director->name}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputName">Birth Date</label>
+                                <input type="text" name="birth date" class="form-control" value="{{$director->birth_date ? $director->birth_date : ''}}" >
                             </div>
                             <br>
                             <br>
@@ -70,34 +73,7 @@
                     </div>
                     <!-- /.card -->
                 </div>
-                <div class="col-md-6">
-                    <div class="card card-secondary">
-                        <div class="card-header">
-                            <h3 class="card-title">Budget</h3>
 
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-                                    <i class="fas fa-minus"></i></button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="inputEstimatedBudget">Estimated budget</label>
-                                <input type="number" id="inputEstimatedBudget" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputSpentBudget">Total amount spent</label>
-                                <input type="number" id="inputSpentBudget" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="inputEstimatedDuration">Estimated project duration</label>
-                                <input type="number" id="inputEstimatedDuration" class="form-control">
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <!-- /.card -->
-                </div>
             </div>
 
         </section>

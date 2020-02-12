@@ -87,7 +87,7 @@
                                 }}
 
                             </div>
-                            //this
+                            
                             <div class="form-group">
                                 <label for="inputStatus">Director</label>
                                 {{
@@ -98,7 +98,7 @@
 
                                 }}
                             </div>
-                            //this
+                            
                             <div class="form-group">
                                 <label>Actors</label>
                                 {{
@@ -138,6 +138,11 @@
                             <div class="form-group">
                                 <label for="inputName">Year</label>
                                 <input type="text" name="year" class="form-control" value="{{$picture->year}}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputName">Rating</label>
+                                <input type="text" name="picture_rating" class="form-control" value="{{$picture->picture_rating}}">
                             </div>
 
                             <div class="form-group">

@@ -11,8 +11,9 @@ use Intervention\Image\ImageManagerStatic as Image;
 class Picture extends Model
 {
 
+
     protected $fillable = ['title_ru', 'title_eng',
-        'budget', 'year', 'description', 'kinopoisk_picture_id'];
+        'budget', 'year', 'description', 'kinopoisk_picture_id', 'picture_rating'];
 
     use Sluggable;
 
@@ -54,12 +55,12 @@ class Picture extends Model
         $this->save();
     }
 
+
     public function setCountry($id)
     {
         $this->country_id = $id;
         $this->save();
     }
-
 
 
     public function setDirector($id)
@@ -75,6 +76,7 @@ class Picture extends Model
         $this->genres()->sync($ids);
     }
 
+
     public function setActors($ids)
     {
         if ($ids == null) return ;
@@ -86,6 +88,7 @@ class Picture extends Model
     {
        return $this->belongsTo(Category::class);
     }
+
 
     public function country()
     {
@@ -119,6 +122,7 @@ class Picture extends Model
         }
         else return 'No genre specify';
     }
+
 
     public function getActors()
     {
@@ -216,10 +220,38 @@ class Picture extends Model
         return $rating['imdb'];
 
     }
+
+
     public static function getResentPictures()
     {
-        return self::select('id', 'title_eng', 'poster', 'kinopoisk_picture_id', 'year', 'is_new')
+        return self::select('id', 'title_eng', 'poster', 'picture_rating', 'year', 'is_new')
             ->orderBy('id', 'DESC')->take(8)->get();
     }
 
+    public static function getNewPictures()
+    {
+       return self::select('id', 'title_eng', 'poster', 'picture_rating', 'year', 'is_new')
+            ->where('year', '=' ,  date('Y'))->take(8)->get();
+    }
+
+
+    public static function getPopularPictures()
+    {
+      return  self::select('id', 'title_eng', 'poster', 'picture_rating', 'year', 'is_new')
+          ->orderBy('picture_rating', 'DESC')->take(8)->get();
+    }
+
+    public static function getBestCartoons()
+    {
+         return self::select('id', 'title_eng', 'poster', 'picture_rating', 'year', 'is_new')
+             ->where('category_id', 2)
+             ->take(12)->get();
+    }
+
+    public static function getResentMovies()
+    {
+        return self::select('id', 'title_eng', 'poster', 'picture_rating', 'year', 'is_new')
+            ->where('category_id', 1)
+            ->take(12)->get();
+    }
 }

@@ -60,12 +60,11 @@
                                         <th>New</th>
                                         <th>Year</th>
                                         <th>Budget</th>
-                                        <th>Views</th>
+                                        {{--<th>Views</th>--}}
                                         <th>Description</th>
-                                        <th>release</th>
-                                        <th>Date</th>
+                                        {{--<th>Date</th>--}}
                                         <th>Poster</th>
-                                        <th>Elements</th>
+                                        <th></th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -85,21 +84,20 @@
                                         <td>{{($picture->is_new ? 'New' : '')}}</td>
                                         <td>{{$picture->year}}</td>
                                         <td>{{$picture->budget}}</td>
-                                        <td>{{$picture->views}}</td>
+                                        {{--<td>{{$picture->views}}</td>--}}
                                         <td>{{$picture->description}}</td>
-                                        <td>{{$picture->release}}</td>
-                                        <td>{{$picture->date}}</td>
-                                        <td><img src="{{$picture->getImage()}}" alt="" width="200" ></td>
+                                        {{--<td>{{$picture->date}}</td>--}}
+                                        <td><img src="{{$picture->getImage()}}" alt="" width="150" ></td>
 
                                         <td><a href="{{route('pictures.edit', $picture->id)}}"
-                                               class="fas fa-pencil-alt fa-2x"></a>
+                                               class="fas fa-pencil-alt "></a>
 
                                         {{Form::open([
                                         'route' => ['pictures.destroy', $picture->id],
                                         'method' => 'delete'
                                         ])}}
                                             <button type="submit" class="delete">
-                                                <i href="#" class="fas fa-trash-alt fa-2x"></i>
+                                                <i href="#" class="fas fa-trash-alt"></i>
                                             </button>
                                         </td>
                                             {{Form::close()}}

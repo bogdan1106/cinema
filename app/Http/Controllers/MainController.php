@@ -11,11 +11,17 @@ class MainController extends Controller
     {
 
         $recentPictures  = Picture::getResentPictures();
-        return view('pages.index',compact('recentPictures'));
+        $newPictures = Picture::getNewPictures();
+        $popularPictures = Picture::getPopularPictures();
+        $bestCartoons = Picture::getBestCartoons();
+        $recentMovies = Picture::getResentMovies();
+
+        return view('pages.index',compact('recentPictures', 'bestCartoons',
+            'newPictures', 'popularPictures', 'recentMovies'));
     }
 
     public function test()
     {
-        return view('pages.layout');
+        return view('pages.single');
     }
 }

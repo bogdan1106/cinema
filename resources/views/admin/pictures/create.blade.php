@@ -70,7 +70,7 @@
 
                                 }}
                             </div>
-                            //this
+                             
                             <div class="form-group">
                                 <label for="inputCountry">Country</label>
                                 {{Form::select(
@@ -98,7 +98,7 @@
 
                             </div>
 
-                            //this
+                             
                             <div class="form-group">
                                 <label for="inputStatus">Director</label>
                                 {{
@@ -109,7 +109,7 @@
 
                                 }}
                             </div>
-                        //this
+                         
                             <div class="form-group">
                                 <label>Actors</label>
                                 {{
@@ -140,7 +140,12 @@
                                 <input type="text" name="year" class="form-control">
                             </div>
 
-                            //this
+                            <div class="form-group">
+                                <label for="inputName">Rating</label>
+                                <input type="text" name="picture_rating" class="form-control">
+                            </div>
+
+                             
                             <div class="form-group">
                                 <label for="inputName">Kinopoisk id</label>
                                 <input type="text" name="kinopoisk_picture_id" class="form-control">

@@ -132,6 +132,7 @@ class PicturesController extends Controller
         $picture->setCategory($request->get('category_id'));
         $picture->setCountry($request->get('country_id'));
         $picture->setGenres($request->get('genres'));
+        $picture->setActors($request->get('actors'));
         $picture->setPictureNew($request->get('is_new'));
         $picture->uploadImage($request->image);
 

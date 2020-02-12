@@ -72,7 +72,7 @@ class DirectorsController extends Controller
             'name' => 'required',
         ]);
         $director->edit($request->all());
-        return redirect(route('actors.index'));
+        return back();
     }
 
     /**
