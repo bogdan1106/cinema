@@ -484,7 +484,7 @@ a.w3_play_icon1:hover {
 /*-- /banner-bottom --*/
 .w3_agilits_banner_bootm {
        padding: 1em 0 2.3em 0;
-    background: #fe423f;
+    background: #9c3127;
 }
 .w3_agilits_inner_bottom {
     margin: 0 auto;
@@ -1417,7 +1417,7 @@ p.para {
 h3.w3l-inner-h-title {
     text-align: center;
     color: #0c0d0d;
-    font-size: 2.5em;
+    font-size: 1.7em;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: 700;
@@ -2967,6 +2967,8 @@ ul.bottom-links-agile li a {
 		margin:0.5em 0 0.5em 0;
 		width: 100%;
 	}
+
+
 	p.fexi_header_para span {
 		float: left;
 		width: 100%;
@@ -3249,3 +3251,10 @@ ul.bottom-links-agile li a {
 	}
 }
 /*-- //responsive --*/
+
+
+
+.video_container {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}

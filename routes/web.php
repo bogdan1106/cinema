@@ -11,25 +11,32 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::get('/register', 'AuthController@index');
+Route::get('/verify/{token}', 'AuthController@verify');
+Route::post('/register', 'AuthController@register')->name('register');
+Route::post('/login', 'AuthController@login')->name('login')->middleware('login');
+Route::get('/login', function (){ return redirect('/');});
 
+
+Route::get('/logout', 'AuthController@logout')->name('logout');
 
 Route::get('/', 'MainController@index');
+Route::get('/watch/{slug}', 'MainController@single')->name('watch');
 Route::get('/test', 'MainController@test');
+Route::get('/news', 'MainController@news')->name('news');
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function (){
+    Route::get('/', 'PicturesController@index');
     Route::resource('/pictures', 'PicturesController');
     Route::resource('/categories', 'CategoriesController');
     Route::resource('/genres', 'GenresController');
     Route::resource('/actors', 'ActorsController');
-//    Route::resource('/users', 'UsersController');
+  Route::resource('/users', 'UsersController');
     Route::resource('/directors', 'DirectorsController');
     Route::resource('/countries', 'CountriesController');
 
@@ -39,3 +46,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function (){
     });
 });
 
+
+
+Route::get('/home', 'HomeController@index')->name('home');

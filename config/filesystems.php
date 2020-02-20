@@ -60,12 +60,18 @@ return [
             'root' => public_path('uploads'),
         ],
 
-
-
         'posters' => [
             'driver' => 'local',
             'root' => storage_path('app/public/posters'),
             'url' => env('APP_URL').'/storage/posters',
+            'visibility' => 'public',
+        ],
+
+
+        'videos' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/videos'),
+            'url' => env('APP_URL').'/storage/video',
             'visibility' => 'public',
         ],
 

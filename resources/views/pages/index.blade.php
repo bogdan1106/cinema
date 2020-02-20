@@ -60,13 +60,13 @@
                                         @foreach($recentPictures as $recentPicture)
 
                                         <div class="w3l-movie-gride-agile">
-                                            <a href="single.html" class="hvr-sweep-to-bottom"><img src="{{$recentPicture->getImage()}}" title="Movies Pro" class="img-responsive" alt=" " width="250px" height="300px">
+                                            <a href="{{route('watch', $recentPicture->slug)}}" class="hvr-sweep-to-bottom"><img src="{{$recentPicture->getImage()}}" title="Movies Pro" class="img-responsive" alt=" " width="250px" height="300px">
                                                 <div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
                                             </a>
 
                                             <div class="mid-1 agileits_w3layouts_mid_1_home">
                                                 <div class="w3l-movie-text">
-                                                    <h6><a href="single.html">{{$recentPicture->title_eng}}</a></h6>
+                                                    <h6><a href="{{route('watch', $recentPicture->slug)}}">{{$recentPicture->title_eng}}</a></h6>
                                                 </div>
                                                 <div class="mid-2 agile_mid_2_home">
                                                     <p>{{$recentPicture->year}}</p>

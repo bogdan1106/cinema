@@ -2,20 +2,20 @@
 
 namespace App;
 
+use App\Traits\UploadImage;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
-
-use Illuminate\Support\Facades\Storage;
-use Intervention\Image\ImageManagerStatic as Image;
 
 class Picture extends Model
 {
 
+   protected const IMAGE_STORAGE_NAME = 'posters';
 
     protected $fillable = ['title_ru', 'title_eng',
         'budget', 'year', 'description', 'kinopoisk_picture_id', 'picture_rating'];
 
     use Sluggable;
+    use UploadImage;
 
     /**
      * Return the sluggable configuration array for this model.
@@ -132,49 +132,49 @@ class Picture extends Model
         }
     }
 
-    public function uploadImage($image)
-    {
-        if ($image == null) return ;
+//    public function uploadImage($image)
+//    {
+//        if ($image == null) return ;
+//
+//        $this->deleteOldPoster();
+//
+//        // save the  picture  file
+//        $imageName = Storage::disk(self::IMAGE_STORAGE_NAME)->put('', $image);
+//        $this->resizePoster($imageName);
+//
+//        // save the image file name in db
+//        $this->image = $imageName;
+//        $this->save();
+//
+//        }
+//
+//
+//    public function resizePoster($imageName)
+//    {
+//        //resize poster and change quality
+//        $imagePath = Storage::disk('posters')->path($imageName);
+//        $img = Image::make($imagePath)->resize(250, 300)
+//            ->save($imagePath, 90);
+//    }
+//
+//
+//    public function deleteOldPoster()
+//    {
+//        // Check the old image file on disk and delete if it exist
+//        if ($this->image != null && Storage::disk('posters')->exists( $this->image))
+//        {
+//            Storage::disk('posters')->delete($this->image);
+//        }
+//    }
 
-        $this->deleteOldPoster();
 
-        // save the  picture poster file
-        $imageName = Storage::disk('posters')->put('', $image);
-        $this->resizePoster($imageName);
-
-        // save the poster file name in db
-        $this->poster = $imageName;
-        $this->save();
-
-        }
-
-
-    public function resizePoster($imageName)
-    {
-        //resize poster and change quality
-        $imagePath = Storage::disk('posters')->path($imageName);
-        $img = Image::make($imagePath)->resize(250, 300)
-            ->save($imagePath, 90);
-    }
-
-
-    public function deleteOldPoster()
-    {
-        // Check the old image file on disk and delete if it exist
-        if ($this->poster != null && Storage::disk('posters')->exists( $this->poster))
-        {
-            Storage::disk('posters')->delete($this->poster);
-        }
-    }
-
-
-    public function getImage()
-    {
-        if(Storage::disk('posters')->exists($this->poster))
-        {
-            return Storage::disk('posters')->url($this->poster);
-        }
-    }
+//    public function getImage()
+//    {
+//        if(Storage::disk('posters')->exists($this->poster))
+//        {
+//            return Storage::disk('posters')->url($this->poster);
+//        }
+//    }
 
 
     public function setPictureNew($status)
@@ -224,34 +224,55 @@ class Picture extends Model
 
     public static function getResentPictures()
     {
-        return self::select('id', 'title_eng', 'poster', 'picture_rating', 'year', 'is_new')
+        return self::select('id', 'title_eng', 'slug',  'image', 'picture_rating', 'year', 'is_new')
             ->orderBy('id', 'DESC')->take(8)->get();
     }
 
     public static function getNewPictures()
     {
-       return self::select('id', 'title_eng', 'poster', 'picture_rating', 'year', 'is_new')
+       return self::select('id', 'title_eng', 'image', 'picture_rating', 'year', 'is_new')
             ->where('year', '=' ,  date('Y'))->take(8)->get();
     }
 
 
     public static function getPopularPictures()
     {
-      return  self::select('id', 'title_eng', 'poster', 'picture_rating', 'year', 'is_new')
+      return  self::select('id', 'title_eng', 'image', 'picture_rating', 'year', 'is_new')
           ->orderBy('picture_rating', 'DESC')->take(8)->get();
     }
 
     public static function getBestCartoons()
     {
-         return self::select('id', 'title_eng', 'poster', 'picture_rating', 'year', 'is_new')
+         return self::select('id', 'title_eng', 'image', 'picture_rating', 'year', 'is_new')
              ->where('category_id', 2)
              ->take(12)->get();
     }
 
     public static function getResentMovies()
     {
-        return self::select('id', 'title_eng', 'poster', 'picture_rating', 'year', 'is_new')
+        return self::select('id', 'title_eng', 'image', 'picture_rating', 'year', 'is_new')
             ->where('category_id', 1)
             ->take(12)->get();
+    }
+
+    //get all genres by 1 string
+    public function getGenresInString()
+    {
+        if (!$this->genres->isEmpty())
+        {
+
+            return $genres = implode(', ', $this->genres()->pluck('title')->all());
+
+        }
+    }
+
+
+    //get all actors by 1 string
+    public function getActorsInString()
+    {
+        if(!$this->actors->isEmpty())
+        {
+            return $actors = implode(', ', $this->actors()->pluck('name')->all());
+        }
     }
 }

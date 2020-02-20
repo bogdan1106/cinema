@@ -6,23 +6,28 @@
 @section('content')
 
 
-
     <!--/content-inner-section-->
     <div class="w3_content_agilleinfo_inner">
         <div class="agile_featured_movies">
-            <div class="inner-agile-w3l-part-head">
-                <h3 class="w3l-inner-h-title">Single Page</h3>
-                <p class="w3ls_head_para">Add short Description</p>
-            </div>
             <div class="latest-news-agile-info">
                 <div class="col-md-8 latest-news-agile-left-content">
-                    <div class="single video_agile_player">
-
-                        <div class="video-grid-single-page-agileits">
-                            <div data-video="f2Z65fobH2I" id="video"> <img src="images/main/1.jpg" alt="" class="img-responsive" /> </div>
-                        </div>
-                        <h4>Force 2 | Official Trailer | John Abraham, Sonakshi Sinha and Tahir Raj Bhasin</h4>
+                    <div class="inner-agile-w3l-part-head">
+                        <h3 class="w3l-inner-h-title">{{$picture->title_ru}} / {{$picture->title_eng}}</h3>
+                        <p class="w3ls_head_para">{{$picture->getGenresInString()}}</p>
                     </div>
+                    <div class="single video_agile_player">
+                        <div class="text-center">
+                            <img src="{{$picture->getImage()}}" alt="" width="400" />
+                        </div>
+                        <div class="text-center">
+                            <h4>{{$picture->title_eng}} | Official Film | {{$picture->getActorsInString()}}</h4>
+
+                        </div>
+
+                        <div class="video_container text-center">
+                            <iframe width="90%" height="500" src="{{$picture->video_code}}" frameborder="0"></iframe>
+                        </div>
+                        </div>
                     <div class="single-agile-shar-buttons">
                         <h5 >Share This :</h5>
                         <ul>
@@ -155,7 +160,7 @@
                            <button type="submit">search</button>
                         </form>
                     </div>
-                    <h4 class="side-t-w3l-agile">Hot <span>Topics</span></h3>
+                    <h4 class="side-t-w3l-agile">Hot <span>Topics</span></h4>
                         <ul class="side-bar-agile">
                             <li><a href="single.html">John Abraham, Sonakshi Sinha and Tahir ...</a><p>Sep 29, 2016</p></li>
                             <li><a href="single.html">Romantic drama about two people finding out that love</a><p>Feb 3, 2016</p></li>
@@ -163,7 +168,7 @@
                             <li><a href="single.html">John Abraham, Sonakshi Sinha and Tahir ...</a><p>Sep 29, 2016</p></li>
                             <li><a href="single.html">John Abraham, Sonakshi Sinha and Tahir ...</a><p>Sep 29, 2016</p></li>
                         </ul>
-                        <h4 class="side-t-w3l-agile">Latest <span>Trailer</span></h3>
+                        <h4 class="side-t-w3l-agile">Latest <span>Trailer</span></h4>
                             <div class="video_agile_player sidebar-player">
                                 <div class="video-grid-single-page-agileits">
                                     <div data-video="fNKUgX8PhMA" id="video1"> <img src="images/main/22.jpg" alt="" class="img-responsive"> <div id="play"></div></div>

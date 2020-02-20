@@ -11,14 +11,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
         function hideURLbar(){ window.scrollTo(0,1); } </script>
     <!-- //for-mobile-apps -->
-    <link href="css/main/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/main/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <!-- pop-up -->
-    <link href="css/main/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/main/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
     <!-- //pop-up -->
-    <link href="css/main/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
-    <link rel="stylesheet" type="text/css" href="css/main/zoomslider.css" />
-    <link rel="stylesheet" type="text/css" href="css/main/style.css" />
-    <link href="css/main/font-awesome.css" rel="stylesheet">
+    <link href="/css/main/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="/css/main/zoomslider.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main/style.css" />
+    <link href="/css/main/font-awesome.css" rel="stylesheet">
     <script type="text/javascript" src="js/main/modernizr-2.6.2.min.js"></script>
     <!--/web-fonts-->
     <link href='//fonts.googleapis.com/css?family=Tangerine:400,700' rel='stylesheet' type='text/css'>
@@ -120,7 +120,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </ul>
                             </li>
                             <li><a href="list.html">A - z list</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li ><a href="contact.html">Contact</a></li>
+                             @if(Auth::user())
+                                <li><a href="{{route('logout')}}">Logout ({{Auth::user()->name}})</a></li>
+                             @endif
                         </ul>
 
                     </div>
@@ -137,6 +140,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <input name="Search" type="search" placeholder="Search...">
                         </form>
                     </div>
+                    <div class="col-6">
+                        @if (session('status'))
+                            <div class="alert alert-danger">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                    </div>
+
                 </div>
 
             </div>
@@ -148,57 +159,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--/banner-section-->
 <!--//main-header-->
 <!--/banner-bottom-->
-{{--<div class="w3_agilits_banner_bootm">--}}
-{{--<div class="w3_agilits_inner_bottom">--}}
-{{--<div class="col-md-6 wthree_agile_login">--}}
-{{--<ul>--}}
-{{--<li><i class="fa fa-phone" aria-hidden="true"></i> (+000) 009 455 4088</li>--}}
-{{--<li><a href="#" class="login"  data-toggle="modal" data-target="#myModal4">Login</a></li>--}}
-{{--<li><a href="#" class="login reg"  data-toggle="modal" data-target="#myModal5">Register</a></li>--}}
+<div class="w3_agilits_banner_bootm">
 
-{{--</ul>--}}
-{{--</div>--}}
-{{--<div class="col-md-6 wthree_share_agile">--}}
+<div class="w3_agilits_inner_bottom">
+<div class="col-md-6 wthree_agile_login">
 
-{{--<div class="single-agile-shar-buttons">--}}
-{{--<ul>--}}
-{{--<li>--}}
-{{--<div class="fb-like" data-href="https://www.facebook.com/w3layouts" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>--}}
-{{--<script>(function(d, s, id) {--}}
-{{--var js, fjs = d.getElementsByTagName(s)[0];--}}
-{{--if (d.getElementById(id)) return;--}}
-{{--js = d.createElement(s); js.id = id;--}}
-{{--js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.7";--}}
-{{--fjs.parentNode.insertBefore(js, fjs);--}}
-{{--}(document, 'script', 'facebook-jssdk'));</script>--}}
-{{--</li>--}}
-{{--<li>--}}
-{{--<div class="fb-share-button" data-href="https://www.facebook.com/w3layouts" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fw3layouts&amp;src=sdkpreparse">Share</a></div>--}}
-{{--</li>--}}
-{{--<li class="news-twitter">--}}
-{{--<a href="https://twitter.com/w3layouts" class="twitter-follow-button" data-show-count="false">Follow @w3layouts</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>--}}
-{{--</li>--}}
-{{--<li>--}}
-{{--<a href="https://twitter.com/intent/tweet?screen_name=w3layouts" class="twitter-mention-button" data-show-count="false">Tweet to @w3layouts</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>--}}
-{{--</li>--}}
-{{--<li>--}}
-{{--<!-- Place this tag where you want the +1 button to render. -->--}}
-{{--<div class="g-plusone" data-size="medium"></div>--}}
 
-{{--<!-- Place this tag after the last +1 button tag. -->--}}
-{{--<script type="text/javascript">--}}
-{{--(function() {--}}
-{{--var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;--}}
-{{--po.src = 'https://apis.google.com/js/platform.js';--}}
-{{--var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);--}}
-{{--})();--}}
-{{--</script>--}}
-{{--</li>--}}
-{{--</ul>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</div>--}}
-{{--</div>--}}
+<ul>
+<li><i class="fa fa-phone" aria-hidden="true"></i> (+000) 009 455 4088</li>
+    @if(Auth::guest())
+<li><a href="#" class="login"  data-toggle="modal" data-target="#myModal4">Login</a></li>
+<li><a href="#" class="login reg"  data-toggle="modal" data-target="#myModal5">Register</a></li>
+    @endif
+    <li class="right">
+
+    </li>
+
+</ul>
+
+
+</div>
+
+<div class="col-md-6 wthree_share_agile">
+
+
+</div>
+</div>
+</div>
 <!--//banner-bottom-->
 <!-- Modal1 -->
 <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" >
@@ -209,10 +196,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4>Login</h4>
+
                 <div class="login-form">
-                    <form action="#" method="post">
-                        <input type="email" name="email" placeholder="E-mail" required="">
+                    <form action="{{route('login')}}" method="post">
+                        @csrf
+                        <input type="email" name="email" placeholder="E-mail">
+                        @error('email')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                         <input type="password" name="password" placeholder="Password" required="">
+                        @error('password')
+                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                        @enderror
                         <div class="tp">
                             <input type="submit" value="LOGIN NOW">
                         </div>
@@ -243,16 +242,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4>Register</h4>
                 <div class="login-form">
-                    <form action="#" method="post">
-                        <input type="text" name="name" placeholder="Name" required="">
-                        <input type="email" name="email" placeholder="E-mail" required="">
-                        <input type="password" name="password" placeholder="Password" required="">
-                        <input type="password" name="conform password" placeholder="Confirm Password" required="">
-                        <div class="signin-rit">
-													<span class="agree-checkbox">
-														<label class="checkbox"><input type="checkbox" name="checkbox">I agree to your <a class="w3layouts-t" href="#" target="_blank">Terms of Use</a> and <a class="w3layouts-t" href="#" target="_blank">Privacy Policy</a></label>
-													</span>
-                        </div>
+                    <form action="{{route('register')}}" method="post">
+                        @csrf
+                        <input type="text" name="name" placeholder="Name" >
+                        <input type="email" name="email" placeholder="E-mail" >
+                        <input type="password" name="password" placeholder="Password" >
+                        <input type="password" name="password-confirmation" placeholder="Confirm Password" >
+                        {{--<div class="signin-rit">--}}
+                            {{--<span class="agree-checkbox">--}}
+                            {{--<label class="checkbox"><input type="checkbox" name="checkbox">I agree to your <a class="w3layouts-t" href="#" target="_blank">Terms of Use</a> and <a class="w3layouts-t" href="#" target="_blank">Privacy Policy</a></label>--}}
+                            {{--</span>--}}
+                            {{--</div>--}}
                         <div class="tp">
                             <input type="submit" value="REGISTER NOW">
                         </div>
@@ -440,10 +440,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //Dropdown-Menu-JavaScript -->
 
 
-<script type="text/javascript" src="js/main/jquery.zoomslider.min.js"></script>
+<script type="text/javascript" src="/js/main/jquery.zoomslider.min.js"></script>
 <!-- search-jQuery -->
-<script src="js/main/main.js"></script>
-<script src="js/main/simplePlayer.js"></script>
+<script src="/js/main/main.js"></script>
+<script src="/js/main/simplePlayer.js"></script>
 <script>
     $("document").ready(function() {
         $("#video").simplePlayer();
@@ -466,7 +466,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script>
 
 <!-- pop-up-box -->
-<script src="js/main/jquery.magnific-popup.js" type="text/javascript"></script>
+<script src="/js/main/jquery.magnific-popup.js" type="text/javascript"></script>
 <!--//pop-up-box -->
 
 <div id="small-dialog1" class="mfp-hide">
@@ -491,7 +491,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     });
 </script>
-<script src="js/main/easy-responsive-tabs.js"></script>
+<script src="/js/main/easy-responsive-tabs.js"></script>
 <script>
     $(document).ready(function () {
         $('#horizontalTab').easyResponsiveTabs({
@@ -514,8 +514,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
     });
 </script>
-<link href="css/main/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
-<script src="js/main/owl.carousel.js"></script>
+<link href="/css/main/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
+<script src="/js/main/owl.carousel.js"></script>
 <script>
     $(document).ready(function() {
         $("#owl-demo").owlCarousel({
@@ -534,8 +534,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script>
 
 <!--/script-->
-<script type="text/javascript" src="js/main/move-top.js"></script>
-<script type="text/javascript" src="js/main/easing.js"></script>
+<script type="text/javascript" src="/js/main/move-top.js"></script>
+<script type="text/javascript" src="/js/main/easing.js"></script>
 
 <script type="text/javascript">
     jQuery(document).ready(function($) {
@@ -561,7 +561,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     });
 </script>
 <!--end-smooth-scrolling-->
-<script src="js/main/bootstrap.js"></script>
+<script src="/js/main/bootstrap.js"></script>
 
 
 
