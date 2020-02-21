@@ -62,7 +62,17 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,'. $id,
+        ]);
+
+        $user = User::find($id);
+        $user->edit($request);
+        return back();
+
+
+
     }
 
     /**

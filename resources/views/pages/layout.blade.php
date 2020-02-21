@@ -45,7 +45,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <!-- navbar-header -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li class="dropdown active">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Genre <b class="caret"></b></a>
                                 <ul class="dropdown-menu multi-column columns-3">
@@ -86,7 +86,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </ul>
                             </li>
                             <li><a href="series.html">tv - series</a></li>
-                            <li><a href="news.html">news</a></li>
+                            <li><a href="{{route('news')}}">news</a></li>
+                            <li><a href="/admin">Admin</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Country <b class="caret"></b></a>
                                 <ul class="dropdown-menu multi-column columns-3">
@@ -121,9 +122,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </li>
                             <li><a href="list.html">A - z list</a></li>
                             <li ><a href="contact.html">Contact</a></li>
-                             @if(Auth::user())
-                                <li><a href="{{route('logout')}}">Logout ({{Auth::user()->name}})</a></li>
-                             @endif
+
+                        <!----User -->
+                            @if(Auth::user())
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::user()->name}} <b class="caret"></b></a>
+                                    <ul class="dropdown-menu multi-column columns-3">
+                                        <li>
+                                            <div class="col-sm-4">
+                                                <ul class="multi-column-dropdown">
+                                                    <li><h4><a href="{{route('edit')}}">Edit</a></h4></li>
+                                                    <li><h4><a href="{{route('logout')}}">Logout</a></h4></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="clearfix"></div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            @endif
+
+                            <!----End User -->
+                        </ul>
+                        </li>
+
                         </ul>
 
                     </div>
@@ -188,80 +210,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <!--//banner-bottom-->
 <!-- Modal1 -->
-<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" >
 
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4>Login</h4>
-
-                <div class="login-form">
-                    <form action="{{route('login')}}" method="post">
-                        @csrf
-                        <input type="email" name="email" placeholder="E-mail">
-                        @error('email')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-                        <input type="password" name="password" placeholder="Password" required="">
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                        @enderror
-                        <div class="tp">
-                            <input type="submit" value="LOGIN NOW">
-                        </div>
-                        <div class="forgot-grid">
-                            <div class="log-check">
-                                <label class="checkbox"><input type="checkbox" name="checkbox">Remember me</label>
-                            </div>
-                            <div class="forgot">
-                                <a href="#" data-toggle="modal" data-target="#myModal2">Forgot Password?</a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- //Modal1 -->
-<!-- Modal1 -->
-<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" >
-
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4>Register</h4>
-                <div class="login-form">
-                    <form action="{{route('register')}}" method="post">
-                        @csrf
-                        <input type="text" name="name" placeholder="Name" >
-                        <input type="email" name="email" placeholder="E-mail" >
-                        <input type="password" name="password" placeholder="Password" >
-                        <input type="password" name="password-confirmation" placeholder="Confirm Password" >
-                        {{--<div class="signin-rit">--}}
-                            {{--<span class="agree-checkbox">--}}
-                            {{--<label class="checkbox"><input type="checkbox" name="checkbox">I agree to your <a class="w3layouts-t" href="#" target="_blank">Terms of Use</a> and <a class="w3layouts-t" href="#" target="_blank">Privacy Policy</a></label>--}}
-                            {{--</span>--}}
-                            {{--</div>--}}
-                        <div class="tp">
-                            <input type="submit" value="REGISTER NOW">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@include('pages.modal.auth')
 
 @yield('content');
 
@@ -302,8 +252,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                 </ul>
             </div>
-
-
             <div class="col-md-2 footer-grid">
                 <h4>Review Movies</h4>
                 <ul class="w3-tag2">
@@ -324,8 +272,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li><a href="genre.html">Historical</a></li>
 
                 </ul>
-
-
             </div>
             <div class="col-md-2 footer-grid">
                 <h4>Latest Movies</h4>

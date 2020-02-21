@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\VerifyRegistration;
 use App\Picture;
+use App\User;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -39,6 +40,14 @@ class MainController extends Controller
     public function news()
     {
         return view('pages.news');
+    }
+
+    public function editUser()
+    {
+        if (Auth::guest()) return redirect('/');
+        $user = Auth::user();
+
+        return view('pages.user_edit', compact('user'));
     }
 
 

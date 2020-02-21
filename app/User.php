@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable
 {
+
+
     use Notifiable , UploadImage;
 
-    protected const IMAGE_STORAGE_NAME = 'avatars';
+    protected const IMAGE_STORAGE_NAME = 'public';
 
     /**
      * The attributes that are mass assignable.
@@ -56,19 +58,13 @@ class User extends Authenticatable
         Mail::to($user->email)->send( new VerifyRegistration( $user));
     }
 
-    public function uploadAvatar($image)
+    public function edit($request)
     {
-
+        $this->fill($request->all());
+        $this->uploadImage($request->image);
+        $this->save();
     }
 
-    public function getAvatar()
 
-    {
-        return Storage::disk('avatars')->getAdapter()->getPathPrefix();
 
-//        if(Storage::disk('videos')->exists($this->image))
-//        {
-//            return Storage::disk('videos')->url($this->image);
-//        }
-    }
 }

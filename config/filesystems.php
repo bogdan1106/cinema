@@ -53,11 +53,14 @@ return [
             'root' => storage_path('app/public'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
+
         ],
 
         'uploads' => [
             'driver' => 'local',
-            'root' => public_path('uploads'),
+            'root' => public_path('/uploads'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
         ],
 
         'posters' => [
@@ -68,12 +71,6 @@ return [
         ],
 
 
-        'videos' => [
-            'driver' => 'local',
-            'root' => storage_path('app/public/videos'),
-            'url' => env('APP_URL').'/storage/video',
-            'visibility' => 'public',
-        ],
 
 
         's3' => [
@@ -84,7 +81,5 @@ return [
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
         ],
-
     ],
-
 ];

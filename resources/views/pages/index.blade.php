@@ -128,13 +128,13 @@
                                         @foreach($newPictures as $newPicture)
 
                                             <div class="w3l-movie-gride-agile">
-                                                <a href="single.html" class="hvr-sweep-to-bottom"><img src="{{$newPicture->getImage()}}" title="Movies Pro" class="img-responsive" alt=" " width="250px" height="300px">
+                                                <a href="{{route('watch', $newPicture->slug)}}" class="hvr-sweep-to-bottom"><img src="{{$newPicture->getImage()}}" title="Movies Pro" class="img-responsive" alt=" " width="250px" height="300px">
                                                     <div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
                                                 </a>
 
                                                 <div class="mid-1 agileits_w3layouts_mid_1_home">
                                                     <div class="w3l-movie-text">
-                                                        <h6><a href="single.html">{{$newPicture->title_eng}}</a></h6>
+                                                        <h6><a href="{{route('watch', $newPicture->slug)}}">{{$newPicture->title_eng}}</a></h6>
                                                     </div>
                                                     <div class="mid-2 agile_mid_2_home">
                                                         <p>{{$newPicture->year}}</p>
@@ -192,13 +192,13 @@
                                         @foreach($popularPictures as $popularPicture)
 
                                             <div class="w3l-movie-gride-agile">
-                                                <a href="single.html" class="hvr-sweep-to-bottom"><img src="{{$popularPicture->getImage()}}" title="Movies Pro" class="img-responsive" alt=" " width="250px" height="300px">
+                                                <a href="{{route('watch', $popularPicture->slug)}}" class="hvr-sweep-to-bottom"><img src="{{$popularPicture->getImage()}}" title="Movies Pro" class="img-responsive" alt=" " width="250px" height="300px">
                                                     <div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
                                                 </a>
 
                                                 <div class="mid-1 agileits_w3layouts_mid_1_home">
                                                     <div class="w3l-movie-text">
-                                                        <h6><a href="single.html">{{$popularPicture->title_eng}}</a></h6>
+                                                        <h6><a href="{{route('watch', $popularPicture->slug)}}">{{$popularPicture->title_eng}}</a></h6>
                                                     </div>
                                                     <div class="mid-2 agile_mid_2_home">
                                                         <p>{{$popularPicture->year}}</p>
@@ -235,12 +235,12 @@
                     @foreach($recentMovies as $recentMovie)
                     <div class="item">
                         <div class="w3l-movie-gride-agile w3l-movie-gride-slider ">
-                            <a href="single.html" class="hvr-sweep-to-bottom"><img src="{{$recentMovie->getImage()}}" title="Movies Pro" class="img-responsive" alt=" " />
+                            <a href="{{route('watch', ['slug' => $recentMovie->slug])}}" class="hvr-sweep-to-bottom"><img src="{{$recentMovie->getImage()}}" title="Movies Pro" class="img-responsive" alt=" " />
                                 <div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
                             </a>
                             <div class="mid-1 agileits_w3layouts_mid_1_home">
                                 <div class="w3l-movie-text">
-                                    <h6><a href="single.html">{{$recentMovie->title_eng}}</a></h6>
+                                    <h6><a href="{{route('watch', ['slug' => $recentMovie->slug])}}">{{$recentMovie->title_eng}}</a></h6>
                                 </div>
                                 <div class="mid-2 agile_mid_2_home">
                                     <p>2016</p>
@@ -269,12 +269,12 @@
                 @foreach($bestCartoons as $bestCartoon)
 
                 <div class="col-md-2 w3l-movie-gride-agile requested-movies">
-                    <a href="single.html" class="hvr-sweep-to-bottom"><img src="{{$bestCartoon->getImage()}}" title="Movies Pro" class="img-responsive" alt=" ">
+                    <a href="{{route('watch', $bestCartoon->slug)}}" class="hvr-sweep-to-bottom"><img src="{{$bestCartoon->getImage()}}" title="Movies Pro" class="img-responsive" alt=" ">
                         <div class="w3l-action-icon"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
                     </a>
                     <div class="mid-1 agileits_w3layouts_mid_1_home">
                         <div class="w3l-movie-text">
-                            <h6><a href="single.html">{{$bestCartoon->title_eng}}</a></h6>
+                            <h6><a href="{{route('watch', $bestCartoon->slug)}}">{{$bestCartoon->title_eng}}</a></h6>
                         </div>
                         <div class="mid-2 agile_mid_2_home">
                             <p>2016</p>
@@ -284,7 +284,7 @@
                             <div class="clearfix"></div>
                         </div>
                     </div>
-                    @if($recentPicture->year == date('Y'))
+                    @if($bestCartoon->year == date('Y'))
                         <div class="ribben">
                             <p>NEW</p>
                         </div>

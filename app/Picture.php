@@ -230,27 +230,27 @@ class Picture extends Model
 
     public static function getNewPictures()
     {
-       return self::select('id', 'title_eng', 'image', 'picture_rating', 'year', 'is_new')
+       return self::select('id', 'title_eng' , 'slug', 'image', 'picture_rating', 'year', 'is_new')
             ->where('year', '=' ,  date('Y'))->take(8)->get();
     }
 
 
     public static function getPopularPictures()
     {
-      return  self::select('id', 'title_eng', 'image', 'picture_rating', 'year', 'is_new')
+      return  self::select('id', 'title_eng' , 'slug', 'image', 'picture_rating', 'year', 'is_new')
           ->orderBy('picture_rating', 'DESC')->take(8)->get();
     }
 
     public static function getBestCartoons()
     {
-         return self::select('id', 'title_eng', 'image', 'picture_rating', 'year', 'is_new')
+         return self::select('id', 'title_eng', 'slug' , 'image', 'picture_rating', 'year', 'is_new')
              ->where('category_id', 2)
              ->take(12)->get();
     }
 
     public static function getResentMovies()
     {
-        return self::select('id', 'title_eng', 'image', 'picture_rating', 'year', 'is_new')
+        return self::select('id', 'title_eng', 'slug' , 'image', 'picture_rating', 'year', 'is_new')
             ->where('category_id', 1)
             ->take(12)->get();
     }

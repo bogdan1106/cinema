@@ -69,8 +69,8 @@
                                         <td>{{$user->is_verify ? 'yes' : '-'}}</td>
                                         <td>{{$user->is_admin ? 'yes' : '-'}}</td>
 
-                                        <td><img src="{{$user->getAvatar()}}" alt="" width="150" >
-                                            {{$user->getAvatar()}}
+                                        <td><img src="{{$user->getImage()}}" alt="" width="150" >
+                                            {{$user->getImage()}}
                                         </td>
 
                                         {{--<td><a href="{{route('pictures.edit', $picture->id)}}"--}}
