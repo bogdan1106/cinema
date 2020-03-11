@@ -51,32 +51,28 @@
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
+                                        <th>Text</th>
                                         <th>Is verify</th>
                                         <th>Is admin</th>
-                                        <th>Avatar</th>
 
                                         <th></th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($users as $user)
+                                    @foreach($comments as $comment)
                                     <tr>
-                                        <td>{{$user->id}}</td>
-                                        <td>{{$user->name}}</td>
-                                        <td>{{$user->email}}</td>
-                                        <td>{{$user->is_verify ? 'yes' : '-'}}</td>
-                                        <td>{{$user->is_admin ? 'yes' : '-'}}</td>
+                                        <td>{{$comment->id}}</td>
+                                        <td>{{$comment->text}}</td>
+                                        <td>{{$comment->is_ckear ? 'yes' : '-'}}</td>
+                                        <td>{{$comment->is_admin ? 'yes' : '-'}}</td>
 
-                                        <td><img src="{{$user->getImage()}}" alt="" width="150" >
-                                        </td>
 
-                                        <td><a href="{{route('users.edit', $user->id)}}"
+
+                                        <td><a href="{{route('comments.edit', $comment->id)}}"
                                                class="fas fa-pencil-alt "></a>
 
                                         {{Form::open([
-                                        'route' => ['users.destroy', $user->id],
+                                        'route' => ['comments.destroy', $comment->id],
                                         'method' => 'delete'
                                         ])}}
                                             <button type="submit" class="delete">

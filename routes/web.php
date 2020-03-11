@@ -11,6 +11,12 @@
 |
 */
 
+
+//dd($genres);
+
+
+//
+
 Route::get('/register', 'AuthController@index');
 Route::get('/verify/{token}', 'AuthController@verify');
 Route::post('/register', 'AuthController@register')->name('register');
@@ -21,15 +27,16 @@ Route::post('/recovery', 'AuthController@recovery')->name('recovery');
 
 
 
+Route::get('/test', function (){
+    return view('test');
+});
+
 Route::get('/', 'MainController@index');
 Route::get('/watch/{slug}', 'MainController@single')->name('watch');
-Route::get('/test', 'MainController@test');
+Route::get('/genre/{slug}', 'MainController@genre')->name('genre');
+Route::post('/search/', 'MainController@search')->name('search');
 Route::get('/news', 'MainController@news')->name('news');
 Route::get('/user/edit', 'MainController@editUser')->name('edit')->middleware('auth');
-
-
-
-
 
 
 
@@ -43,6 +50,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function (){
     Route::resource('/users', 'UsersController');
     Route::resource('/directors', 'DirectorsController');
     Route::resource('/countries', 'CountriesController');
+    Route::resource('/comments', 'CommentsController');
 
 
     Route::get('/test', function (){

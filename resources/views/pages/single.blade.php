@@ -1,6 +1,7 @@
 
 @extends('pages.layout')
 
+@section('title', '' . $picture->category == 1 ? 'Film ' : 'Animated Film '. $picture->title_eng . ' watch online')
 
 
 @section('content')
@@ -25,7 +26,7 @@
                         </div>
 
                         <div class="video_container text-center">
-                            <iframe width="90%" height="500" src="{{$picture->video_code}}" frameborder="0"></iframe>
+                            <iframe width="90%" height="500" src="https://www.youtube.com/embed/{{$picture->video_code}}" frameborder="0"  allowfullscreen></iframe>
                         </div>
                         </div>
                     <div class="single-agile-shar-buttons">
@@ -65,91 +66,65 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="admin-text">
-                        <h5>WRITTEN BY ADMIN</h5>
-                        <div class="admin-text-left">
-                            <a href="#"><img src="images/main/admin.jpg" alt=""></a>
-                        </div>
-                        <div class="admin-text-right">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <span>View all posts by :<a href="#"> Admin </a></span>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="response">
-                        <h4>Responses</h4>
-                        <div class="media response-info">
-                            <div class="media-left response-text-left">
-                                <a href="#">
-                                    <img class="media-object" src="images/main/admin.jpg" alt="">
-                                </a>
-                                <h5><a href="#">Admin</a></h5>
+                    @if($picture->getAdminComments())
+                        @foreach($picture->getAdminComments() as $adminComment)
+                            <div class="admin-text">
+                                <h5>WRITTEN BY ADMIN ({{$adminComment->user->name}})</h5>
+                                <div class="admin-text-left">
+                                    <a href="#"><img src="{{$adminComment->user->getImage()}}" alt=""></a>
+                                </div>
+                                <div class="admin-text-right">
+                                    <p>{{$adminComment->text}}</p>
+                                    <span>View all posts by :<a href="#"> {{$adminComment->user->name}} </a></span>
+                                </div>
+                                <div class="clearfix"> </div>
                             </div>
-                            <div class="media-body response-text-right">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.There are many variations of passages of Lorem Ipsum available.</p>
-                                <ul>
-                                    <li>October 15, 2016</li>
-                                    <li><a href="single.html"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a></li>
-                                </ul>
+
+                            <br>
+                        @endforeach
+                    @endif
+                    <div class="response">
+                        <h4>Comments</h4>
+                        @if ($picture->comments)
+                            @foreach($picture->getComments() as $comment)
                                 <div class="media response-info">
                                     <div class="media-left response-text-left">
                                         <a href="#">
-                                            <img class="media-object" src="images/main/admin.jpg" alt="">
+                                            <img class="media-object" src="" alt="">
                                         </a>
-                                        <h5><a href="#">Admin</a></h5>
+                                        <h5><a href="#">{{$comment->user->name}}</a></h5>
                                     </div>
                                     <div class="media-body response-text-right">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.There are many variations of passages of Lorem Ipsum available.</p>
+                                        <p>{{$comment->text}}</p>
                                         <ul>
-                                            <li>November 02, 2016</li>
+                                            <li>November 03, 2016</li>
                                             <li><a href="single.html"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a></li>
                                         </ul>
                                     </div>
                                     <div class="clearfix"> </div>
                                 </div>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                        <div class="media response-info">
-                            <div class="media-left response-text-left">
-                                <a href="#">
-                                    <img class="media-object" src="images/main/admin.jpg" alt="">
-                                </a>
-                                <h5><a href="#">Admin</a></h5>
-                            </div>
-                            <div class="media-body response-text-right">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.There are many variations of passages of Lorem Ipsum available.</p>
-                                <ul>
-                                    <li>November 03, 2016</li>
-                                    <li><a href="single.html"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a></li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
+                                @endforeach
+                            @endif
+
                     </div>
                     <div class="all-comments-info">
+                        @if(auth()->guest())
+                                <h3>Please register or login if you want to leave comment</h3>
+                            @else
                         <h5 >LEAVE A COMMENT</h5>
                         <div class="agile-info-wthree-box">
-                            <form>
-                                <div class="col-md-6 form-info">
-                                    <input type="text" name="name" placeholder="Your Name" required="">
-                                    <input type="email" name="email" placeholder="Your Email" required="">
-                                    <input type="text" name="phone" placeholder="Your Phone" required="">
-                                </div>
-                                <div class="col-md-6 form-info">
-
-                                    <textarea placeholder="Message" required=""></textarea>
+                            <form action="{{route('comments.store')}}" method="post">
+                                @csrf
+                                <div class="col-md-12 form-info" >
+                                    <textarea name="text" placeholder="Message"></textarea>
+                                    <input type="hidden" name="picture_id" value="{{$picture->id}}">
+                                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                                     <input type="submit" value="SEND">
                                 </div>
                                 <div class="clearfix"> </div>
-
-
                             </form>
                         </div>
+                            @endif
                     </div>
                 </div>
                 <div class="col-md-4 latest-news-agile-right-content">
@@ -168,84 +143,31 @@
                             <li><a href="single.html">John Abraham, Sonakshi Sinha and Tahir ...</a><p>Sep 29, 2016</p></li>
                             <li><a href="single.html">John Abraham, Sonakshi Sinha and Tahir ...</a><p>Sep 29, 2016</p></li>
                         </ul>
-                        <h4 class="side-t-w3l-agile">Latest <span>Trailer</span></h4>
-                            <div class="video_agile_player sidebar-player">
-                                <div class="video-grid-single-page-agileits">
-                                    <div data-video="fNKUgX8PhMA" id="video1"> <img src="images/main/22.jpg" alt="" class="img-responsive"> <div id="play"></div></div>
-                                </div>
 
 
-                                <div class="player-text side-bar-info">
-                                    <p class="fexi_header">Me Before You </p>
-                                    <p class="fexi_header_para"><span class="conjuring_w3">Story Line<label>:</label></span>Me Before You Official Trailer #2 (2016) - Emilia Clarke, Sam Claflin Movie HD
 
-                                        A girl in a small town forms an unlikely....</p>
-                                    <p class="fexi_header_para"><span>Release On<label>:</label></span>Feb 3, 2016 </p>
-                                    <p class="fexi_header_para">
-                                        <span>Genres<label>:</label> </span>
-                                        <a href="genre.html">Drama</a> |
-                                        <a href="genre.html">Adventure</a> |
-                                        <a href="genre.html">Family</a>
-                                    </p>
-                                    <p class="fexi_header_para fexi_header_para1"><span>Star Rating<label>:</label></span>
-                                        <a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
-                                        <a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a>
-                                    </p>
-                                </div>
-
-                            </div>
                             <div class="clearfix"> </div>
                             <div class="agile-info-recent">
-                                <h4 class="side-t-w3l-agile">Latest <span>Trailer</span></h4>
+                                <h4 class="side-t-w3l-agile">Best <span>pictures</span></h4>
                                 <div class="w3ls-recent-grids">
-                                    <div class="w3l-recent-grid">
-                                        <div class="wom">
-                                            <a href="single.html"><img src="images/main/m12.jpg" alt=" " class="img-responsive"></a>
+                                    @foreach($bestPictures as $bestPicture)
+                                        <div class="w3l-recent-grid">
+                                            <div class="wom">
+                                                <a href="{{route('watch', $bestPicture->slug)}}"><img src="{{$bestPicture->getImage()}}" alt=" " class="img-responsive"></a>
+                                            </div>
+                                            <div class="wom-right">
+                                                <h5><a href={{route('watch', $bestPicture->slug)}}>{{$bestPicture->title_eng}}</a></h5>
+                                                <p>{{$bestPicture->getGenres()}}</p>
+                                                <ul class="w3l-sider-list">
+                                                    <li><i class="fa fa-clock-o" aria-hidden="true"></i>{{$bestPicture->year}}</li>
+                                                    <li><i class="fa fa-eye" aria-hidden="true"></i>{{$bestPicture->views}}</li>
+                                                </ul>
+                                            </div>
+                                            <div class="clearfix"> </div>
                                         </div>
-                                        <div class="wom-right">
-                                            <h5><a href="single.html">Lorem Integer rutrum</a></h5>
-                                            <p>Mauris fermentum dictum magna. Sed laoreet aliquam leo.
-                                                Ut tellus dolor, dapibus eget.</p>
-                                            <ul class="w3l-sider-list">
-                                                <li><i class="fa fa-clock-o" aria-hidden="true"></i>On Jan 12, 2016</li>
-                                                <li><i class="fa fa-eye" aria-hidden="true"></i> 2602</li>
-                                            </ul>
-                                        </div>
-                                        <div class="clearfix"> </div>
-                                    </div>
-                                    <div class="w3l-recent-grid">
-                                        <div class="wom">
-                                            <a href="single.html"><img src="images/main/m13.jpg" alt=" " class="img-responsive"></a>
-                                        </div>
-                                        <div class="wom-right">
-                                            <h5><a href="single.html">Lorem Integer rutrum</a></h5>
-                                            <p>Mauris fermentum dictum magna. Sed laoreet aliquam leo.
-                                                Ut tellus dolor, dapibus eget.</p>
-                                            <ul class="w3l-sider-list">
-                                                <li><i class="fa fa-clock-o" aria-hidden="true"></i>On Mar 3, 2016</li>
-                                                <li><i class="fa fa-eye" aria-hidden="true"></i> 2742</li>
-                                            </ul>
-                                        </div>
-                                        <div class="clearfix"> </div>
-                                    </div>
-                                    <div class="w3l-recent-grid">
-                                        <div class="wom">
-                                            <a href="single.html"><img src="images/main/m14.jpg" alt=" " class="img-responsive"></a>
-                                        </div>
-                                        <div class="wom-right">
-                                            <h5><a href="single.html">Lorem Integer rutrum</a></h5>
-                                            <p>Mauris fermentum dictum magna. Sed laoreet aliquam leo.
-                                                Ut tellus dolor, dapibus eget.</p>
-                                            <ul class="w3l-sider-list">
-                                                <li><i class="fa fa-clock-o" aria-hidden="true"></i>On Oct 13, 2016</li>
-                                                <li><i class="fa fa-eye" aria-hidden="true"></i> 2802</li>
-                                            </ul>
-                                        </div>
-                                        <div class="clearfix"> </div>
-                                    </div>
+                                        @endforeach
+
+
                                 </div>
                             </div>
 

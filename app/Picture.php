@@ -37,6 +37,7 @@ class Picture extends Model
     {
         $picture = new Picture();
         $picture->fill($fields);
+        $picture->views = rand(1250, 5550);
         $picture->save();
         return $picture;
     }
@@ -105,6 +106,11 @@ class Picture extends Model
     public function actors()
     {
         return $this->belongsToMany(Actor::class);
+    }
+
+    public function comments()
+    {
+        return $this->HasMany(Comment::class);
     }
 
 
@@ -237,7 +243,7 @@ class Picture extends Model
 
     public static function getPopularPictures()
     {
-      return  self::select('id', 'title_eng' , 'slug', 'image', 'picture_rating', 'year', 'is_new')
+      return  self::select('id', 'title_eng' , 'slug', 'image', 'picture_rating', 'year', 'views', 'is_new')
           ->orderBy('picture_rating', 'DESC')->take(8)->get();
     }
 
@@ -275,4 +281,47 @@ class Picture extends Model
             return $actors = implode(', ', $this->actors()->pluck('name')->all());
         }
     }
+
+    public function getAdminComments()
+    {
+       return $this->comments()->where('is_admin', 1)->get();
+    }
+
+    public function getComments()
+    {
+        return $this->comments()->where('is_admin', 0)
+            ->where('is_clear', 1)->orderBy('id', 'desc')
+                ->get();
+    }
+
+    public static function getRandomPicture()
+    {
+        return Picture::orderByRaw("RAND()")->first();
+    }
+
+    public function getVideoFrame()
+    {
+        return '<iframe width="689" height="388" src="https://www.youtube.com/embed/' .$this->video_code .'" frameborder="0"  allowfullscreen></iframe>';
+    }
+
+    public function getShortDescription()
+    {
+        if(strlen($this->description) > 440)
+        return substr($this->description, 0, 440) . '...';
+        else return $this->description;
+    }
+
+    public static function search($search)
+    { $search = strtolower($search);
+        if (preg_match("/^[а-я]/i", $search))
+        {
+            return self::where('title_ru', 'LIKE', '%'. $search .'%')->get();
+        }
+
+        return self::where('title_eng', 'LIKE', '%'. $search .'%')->get();
+    }
+
+
+
+
 }

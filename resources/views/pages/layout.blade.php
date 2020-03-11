@@ -2,14 +2,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Movies Pro an Entertainment Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+
+
+    <title>@yield('title')</title>
     <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Movies Pro Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    {{--<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);--}}
+        {{--function hideURLbar(){ window.scrollTo(0,1); } </script>--}}
     <!-- //for-mobile-apps -->
     <link href="/css/main/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <!-- pop-up -->
@@ -40,7 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <h1><a  href="index.html"><span>M</span>ovies <span>P</span>ro</a></h1>
+                        <h1><a  href="/"><span>M</span>ovies <span>P</span>ro</a></h1>
                     </div>
                     <!-- navbar-header -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -51,36 +53,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <ul class="dropdown-menu multi-column columns-3">
                                     <li>
                                         <div class="col-sm-4">
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="genre.html">Action</a></li>
-                                                <li><a href="genre.html">Biography</a></li>
-                                                <li><a href="genre.html">Crime</a></li>
-                                                <li><a href="genre.html">Family</a></li>
-                                                <li><a href="horror.html">Horror</a></li>
-                                                <li><a href="genre.html">Romance</a></li>
-                                                <li><a href="genre.html">Sports</a></li>
-                                                <li><a href="genre.html">War</a></li>
+                                            <ul class="multi-column-dropdown genres-list">
+                                                    @foreach ($genres1 as $genre)
+
+                                                    <li class="text-center"><a href="{{$genre->slug}}">{{$genre->title}}</a></li>
+                                                        @endforeach
                                             </ul>
                                         </div>
                                         <div class="col-sm-4">
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="genre.html">Adventure</a></li>
-                                                <li><a href="comedy.html">Comedy</a></li>
-                                                <li><a href="genre.html">Documentary</a></li>
-                                                <li><a href="genre.html">Fantasy</a></li>
-                                                <li><a href="genre.html">Thriller</a></li>
+                                            <ul class="multi-column-dropdown genres-list">
+                                                    @foreach ($genres2 as $genre)
+
+                                                    <li class="text-center"><a href="{{$genre->slug}}">{{$genre->title}}</a></li>
+                                                        @endforeach
                                             </ul>
                                         </div>
                                         <div class="col-sm-4">
-                                            <ul class="multi-column-dropdown">
-                                                <li><a href="genre.html">Animation</a></li>
-                                                <li><a href="genre.html">Costume</a></li>
-                                                <li><a href="genre.html">Drama</a></li>
-                                                <li><a href="genre.html">History</a></li>
-                                                <li><a href="genre.html">Musical</a></li>
-                                                <li><a href="genre.html">Psychological</a></li>
+                                            <ul class="multi-column-dropdown genres-list">
+                                                    @foreach ($genres3 as $genre)
+
+                                                    <li class="text-center"><a href="{{$genre->slug}}">{{$genre->title}}</a></li>
+                                                        @endforeach
                                             </ul>
                                         </div>
+
                                         <div class="clearfix"></div>
                                     </li>
                                 </ul>
@@ -158,14 +154,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </ul> <!-- cd-header-buttons -->
                     </div>
                     <div id="cd-search" class="cd-search">
-                        <form action="#" method="post">
-                            <input name="Search" type="search" placeholder="Search...">
+                        <form action="{{route('search')}}" method="post">
+                            @csrf
+                            <input name="search" type="search" placeholder="Search...">
                         </form>
                     </div>
                     <div class="col-6">
                         @if (session('status'))
                             <div class="alert alert-danger">
-                                {{ session('status') }}
+                                {{ session('status')}}
                             </div>
                         @endif
                     </div>
