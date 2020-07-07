@@ -4,6 +4,7 @@
 <head>
 
 
+
     <title>@yield('title')</title>
     <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,9 +14,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     {{--<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);--}}
         {{--function hideURLbar(){ window.scrollTo(0,1); } </script>--}}
     <!-- //for-mobile-apps -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="/css/main/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <!-- pop-up -->
     <link href="/css/main/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/mystyle.css" rel="stylesheet" type="text/css" media="all" />
     <!-- //pop-up -->
     <link href="/css/main/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" type="text/css" href="/css/main/zoomslider.css" />
@@ -27,6 +30,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <!--//web-fonts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    {{--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">--}}
 </head>
 <body>
 <div id="demo-1" class="banner-inner">
@@ -56,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <ul class="multi-column-dropdown genres-list">
                                                     @foreach ($genres1 as $genre)
 
-                                                    <li class="text-center"><a href="{{$genre->slug}}">{{$genre->title}}</a></li>
+                                                    <li class="text-center"><a href="{{route('genre', $genre->slug)}}">{{$genre->title}}</a></li>
                                                         @endforeach
                                             </ul>
                                         </div>
@@ -64,7 +69,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <ul class="multi-column-dropdown genres-list">
                                                     @foreach ($genres2 as $genre)
 
-                                                    <li class="text-center"><a href="{{$genre->slug}}">{{$genre->title}}</a></li>
+                                                    <li class="text-center"><a href="{{route('genre', $genre->slug)}}">{{$genre->title}}</a></li>
                                                         @endforeach
                                             </ul>
                                         </div>
@@ -72,7 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <ul class="multi-column-dropdown genres-list">
                                                     @foreach ($genres3 as $genre)
 
-                                                    <li class="text-center"><a href="{{$genre->slug}}">{{$genre->title}}</a></li>
+                                                    <li class="text-center"><a href="{{route('genre',  $genre->slug)}}">{{$genre->title}}</a></li>
                                                         @endforeach
                                             </ul>
                                         </div>
@@ -128,6 +133,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                             <div class="col-sm-4">
                                                 <ul class="multi-column-dropdown">
                                                     <li><h4><a href="{{route('edit')}}">Edit</a></h4></li>
+                                                    <li><h4><a href="{{route('liked')}}">Favorite Pictures</a></h4></li>
                                                     <li><h4><a href="{{route('logout')}}">Logout</a></h4></li>
                                                 </ul>
                                             </div>
@@ -224,129 +230,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <input type="submit" value="Subscribe">
             </form>
         </div>
-        <div class="footer-grids w3-agileits">
-            <div class="col-md-2 footer-grid">
-                <h4>Release</h4>
-                <ul>
-                    <li><a href="#" title="Release 2016">2016</a></li>
-                    <li><a href="#" title="Release 2015">2015</a></li>
-                    <li><a href="#" title="Release 2014">2014</a></li>
-                    <li><a href="#" title="Release 2013">2013</a></li>
-                    <li><a href="#" title="Release 2012">2012</a></li>
-                    <li><a href="#" title="Release 2011">2011</a></li>
-                </ul>
-            </div>
-            <div class="col-md-2 footer-grid">
-                <h4>Movies</h4>
-                <ul>
 
-                    <li><a href="genre.html">ADVENTURE</a></li>
-                    <li><a href="comedy.html">COMEDY</a></li>
-                    <li><a href="series.html">FANTASY</a></li>
-                    <li><a href="series.html">ACTION  </a></li>
-                    <li><a href="genre.html">MOVIES  </a></li>
-                    <li><a href="horror.html">HORROR  </a></li>
-
-                </ul>
-            </div>
-            <div class="col-md-2 footer-grid">
-                <h4>Review Movies</h4>
-                <ul class="w3-tag2">
-                    <li><a href="comedy.html">Comedy</a></li>
-                    <li><a href="horror.html">Horror</a></li>
-                    <li><a href="series.html">Historical</a></li>
-                    <li><a href="series.html">Romantic</a></li>
-                    <li><a href="series.html">Love</a></li>
-                    <li><a href="genre.html">Action</a></li>
-                    <li><a href="single.html">Reviews</a></li>
-                    <li><a href="comedy.html">Comedy</a></li>
-                    <li><a href="horror.html">Horror</a></li>
-                    <li><a href="series.html">Historical</a></li>
-                    <li><a href="series.html">Romantic</a></li>
-                    <li><a href="genre.html">Love</a></li>
-                    <li><a href="comedy.html">Comedy</a></li>
-                    <li><a href="horror.html">Horror</a></li>
-                    <li><a href="genre.html">Historical</a></li>
-
-                </ul>
-            </div>
-            <div class="col-md-2 footer-grid">
-                <h4>Latest Movies</h4>
-                <div class="footer-grid1">
-                    <div class="footer-grid1-left">
-                        <a href="single.html"><img src="images/main/1.jpg" alt=" " class="img-responsive"></a>
-                    </div>
-                    <div class="footer-grid1-right">
-                        <a href="single.html">eveniet ut molesti</a>
-
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="footer-grid1">
-                    <div class="footer-grid1-left">
-                        <a href="single.html"><img src="images/main/2.jpg" alt=" " class="img-responsive"></a>
-                    </div>
-                    <div class="footer-grid1-right">
-                        <a href="single.html">earum rerum tenet</a>
-
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="footer-grid1">
-
-                    <div class="footer-grid1-left">
-                        <a href="single.html"><img src="images/main/4.jpg" alt=" " class="img-responsive"></a>
-                    </div>
-                    <div class="footer-grid1-right">
-                        <a href="single.html">eveniet ut molesti</a>
-
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <div class="footer-grid1">
-                    <div class="footer-grid1-left">
-                        <a href="single.html"><img src="images/main/3.jpg" alt=" " class="img-responsive"></a>
-                    </div>
-                    <div class="footer-grid1-right">
-                        <a href="single.html">earum rerum tenet</a>
-
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-
-
-            </div>
-            <div class="col-md-2 footer-grid">
-                <h4 class="b-log"><a href="index.html"><span>M</span>ovies <span>P</span>ro</a></h4>
-                <div class="footer-grid-instagram">
-                    <a href="single.html"><img src="images/main/m1.jpg" alt=" " class="img-responsive"></a>
-                </div>
-                <div class="footer-grid-instagram">
-                    <a href="single.html"><img src="images/main/m2.jpg" alt=" " class="img-responsive"></a>
-                </div>
-                <div class="footer-grid-instagram">
-                    <a href="single.html"><img src="images/main/m3.jpg" alt=" " class="img-responsive"></a>
-                </div>
-                <div class="footer-grid-instagram">
-                    <a href="single.html"><img src="images/main/m4.jpg" alt=" " class="img-responsive"></a>
-                </div>
-                <div class="footer-grid-instagram">
-                    <a href="single.html"><img src="images/main/m5.jpg" alt=" " class="img-responsive"></a>
-                </div>
-                <div class="footer-grid-instagram">
-                    <a href="single.html"><img src="images/main/m6.jpg" alt=" " class="img-responsive"></a>
-                </div>
-
-                <div class="clearfix"> </div>
-            </div>
-            <div class="clearfix"> </div>
-            <ul class="bottom-links-agile">
-                <li><a href="icons.html" title="Font Icons">Icons</a></li>
-                <li><a href="short-codes.html" title="Short Codes">Short Codes</a></li>
-                <li><a href="contact.html" title="contact">Contact</a></li>
-
-            </ul>
-        </div>
         <h3 class="text-center follow">Connect <span>Us</span></h3>
         <ul class="social-icons1 agileinfo">
             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -360,12 +244,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </div>
 <div class="w3agile_footer_copy">
-    <p>© 2017 Movies Pro. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+    <p>© 2020  All rights reserved </p>
 </div>
 <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 
-<script src="js/main/jquery-1.11.1.min.js"></script>
-<!-- Dropdown-Menu-JavaScript -->
+
 <script>
     $(document).ready(function(){
         $(".dropdown").hover(
@@ -386,6 +269,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript" src="/js/main/jquery.zoomslider.min.js"></script>
 <!-- search-jQuery -->
 <script src="/js/main/main.js"></script>
+<script src="/js/likes.js"></script>
+<script src="/js/button.js"></script>
 <script src="/js/main/simplePlayer.js"></script>
 <script>
     $("document").ready(function() {
